@@ -7,54 +7,38 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 
-var i=1;
 
-app.post('/addUsers', function (req, res) {
-    fs.exists("./users.json",function (j) {
-        if (j)  {
 
-            fs.readFile(__dirname + "/" + "users.json", 'utf8', function (err, data) {
+app.post('/addUsers', function (req, res,next) {
+
+            fs.readFile(__dirname + "/" + "items.json", 'utf8', function (err, data) {
+                if(err)
+                    return next(err);
                 data = JSON.parse(data);
                 var item = {
-                    "id": i++,
+                    "id": id++,
                     "barcode": req.body.barcode,
                     "name": req.body.name,
                     "unit": req.body.unit,
                     "price": req.body.price
                 };
-                data.splice(data.length, 0, item);
-                //res.send(JSON.stringify(data[data.length]));
-                fs.writeFile(__dirname + "/" + "users.json", JSON.stringify(data), function (err) {
-                    if (err) throw err;
-                    console.log('文件写入成功');
-                });
-                //res.end(JSON.stringify(item));
-                res.json(item);
-                res.status(201).end();
+                if(isCorrectType(item)){
+                    data.splice(data.length, 0, item);
+                    fs.writeFile(__dirname + "/" + "items.json", JSON.stringify(data), function (err) {
+                        if (err) return next(err);
+                    });
+                    res.json(item);
+                    res.status(201).end();
+                }
+                else{
+                    res.status(400).end();
+                }
             });
-        }
-
-
-        else {
-            fs.readFile("items.json","utf8",function (err, data) {
-                if (err) throw err;
-                data = [{
-                    "id": i++,
-                    "barcode": req.body.barcode,
-                    "name": req.body.name,
-                    "unit": req.body.unit,
-                    "price": req.body.price
-                }]
-                fs.writeFile(__dirname + "/" + "users.json", JSON.stringify(data), function (err) {
-                    if (err) throw err;
-                    console.log('文件写入成功');
-                });
-                res.end(JSON.stringify(data));
-
-            });
-        }
-
-    });
 });
-
+function isCorrectType(data){
+    if(typeof data.barcode==='string' && typeof data.name==='string' && typeof data.unit==='string' &&
+        typeof data.price==='number'){
+        return true;
+    }
+}
 module.exports =  app;

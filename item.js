@@ -5,8 +5,8 @@ var fs = require("fs");
 
 app.delete('/:id', function (req, res) {
     var id=req.params.id;
-    fs.readFile( __dirname + "/" + "users.json", 'utf8', function (err, items) {
-        if(err) throw err;
+    fs.readFile( __dirname + "/" + "items.json", 'utf8', function (err, items) {
+        if(err) return next(err);
         items = JSON.parse( items);
         var address= findAddress(items, JSON.parse(id));
         if(address===false){
@@ -15,8 +15,8 @@ app.delete('/:id', function (req, res) {
         else{
             items.splice(address,1);
             res.status(200).end();
-            fs.writeFile( __dirname + "/" + "users.json", JSON.stringify(items), function (err){
-                if(err) throw err;
+            fs.writeFile( __dirname + "/" + "items.json", JSON.stringify(items), function (err){
+                if(err) return next(err);
             });
         }
     });
