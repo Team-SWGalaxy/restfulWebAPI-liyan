@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var fs = require("fs");
 var bodyParser = require('body-parser');
+var nextId=require('./nextId')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -9,14 +10,14 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 
 
-app.post('/addUsers', function (req, res,next) {
+app.post('/addItems', function (req, res,next) {
 
             fs.readFile(__dirname + "/" + "items.json", 'utf8', function (err, data) {
                 if(err)
                     return next(err);
                 data = JSON.parse(data);
                 var item = {
-                    "id": id++,
+                    "id": nextId(),
                     "barcode": req.body.barcode,
                     "name": req.body.name,
                     "unit": req.body.unit,
