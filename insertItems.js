@@ -15,7 +15,7 @@ app.post('/addItems', function (req, res,next) {
             fs.readFile(__dirname + "/" + "items.json", 'utf8', function (err, data) {
                 if(err)
                     return next(err);
-                data = JSON.parse(data);
+                items = JSON.parse(data);
                 var item = {
                     "id": nextId(),
                     "barcode": req.body.barcode,
@@ -24,8 +24,8 @@ app.post('/addItems', function (req, res,next) {
                     "price": req.body.price
                 };
                 if(isCorrectType(item)){
-                    data.splice(data.length, 0, item);
-                    fs.writeFile(__dirname + "/" + "items.json", JSON.stringify(data), function (err) {
+                    items.splice(items.length, 0, item);
+                    fs.writeFile(__dirname + "/" + "items.json", JSON.stringify(items), function (err) {
                         if (err) return next(err);
                     });
                     res.json(item);

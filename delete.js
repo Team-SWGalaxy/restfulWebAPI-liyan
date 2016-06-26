@@ -5,9 +5,9 @@ var fs = require("fs");
 
 app.delete('/items/:id', function (req, res) {
     var id=req.params.id;
-    fs.readFile( __dirname + "/" + "items.json", 'utf8', function (err, items) {
+    fs.readFile( __dirname + "/" + "items.json", 'utf8', function (err, data) {
         if(err) return next(err);
-        items = JSON.parse( items);
+        items = JSON.parse( data);
         var address= findAddress(items, JSON.parse(id));
         if(address===false){
             res.status(404).end();
