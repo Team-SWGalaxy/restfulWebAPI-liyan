@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e12ac8d4-a100-4604-bee3-afeb68f6e831" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/delete.js" afterPath="$PROJECT_DIR$/delete.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/insertItems.js" afterPath="$PROJECT_DIR$/insertItems.js" />
     </list>
     <ignored path="myapp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -54,11 +53,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="delete.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="delete.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/delete.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
+            <state relative-caret-position="300">
+              <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -84,7 +83,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insertItems.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="insertItems.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/insertItems.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
@@ -133,8 +132,8 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/nextId.js" />
         <option value="$PROJECT_DIR$/getOneItem.js" />
-        <option value="$PROJECT_DIR$/delete.js" />
         <option value="$PROJECT_DIR$/insertItems.js" />
+        <option value="$PROJECT_DIR$/delete.js" />
       </list>
     </option>
   </component>
@@ -266,12 +265,12 @@
       <workItem from="1465280113001" duration="7885000" />
       <workItem from="1466673784579" duration="4792000" />
       <workItem from="1466933472948" duration="902000" />
-      <workItem from="1466934397966" duration="971000" />
+      <workItem from="1466934397966" duration="1268000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55972000" />
+    <option name="totallyTimeSpent" value="56269000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1301" height="772" extended-state="6" />
@@ -614,14 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/delete.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="0" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -658,6 +649,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="23" selection-start-line="2" selection-start-column="23" selection-end-line="2" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/delete.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="9" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
           <folding />
         </state>
       </provider>

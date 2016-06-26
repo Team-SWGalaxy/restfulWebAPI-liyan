@@ -3,7 +3,7 @@ var app = express();
 var fs = require("fs");
 
 
-app.delete('/items/:id', function (req, res) {
+app.delete('/items/:id', function (req, res ,next) {
     var id=req.params.id;
     fs.readFile( __dirname + "/" + "items.json", 'utf8', function (err, data) {
         if(err) return next(err);
